@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import Swal from 'sweetalert2';
 
 @Component({
     selector : 'app-body',
@@ -24,6 +25,14 @@ export class BodyComponent{
         ]
     }
     show_hide(){
-        this.show_hide_var = !this.show_hide_var;
+        Swal.fire({
+            title: 'Error!',
+            text: 'Do you want to continue',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+          }).then(()=>{
+
+              this.show_hide_var = !this.show_hide_var;
+          })
     }
 }
